@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Users, Briefcase, Heart, Home } from 'lucide-react';
+import { Users, Briefcase, Heart, Home, Calendar } from 'lucide-react';
 import LandingPage from './components/LandingPage';
 import EmployeeView from './components/EmployeeView';
 import ManagerView from './components/ManagerView';
+import HRView from './components/HRView';
 import { employees, jobRoles } from './mockData';
 
 function App() {
-  const [viewMode, setViewMode] = useState(null); // null, 'employee', or 'manager'
+  const [viewMode, setViewMode] = useState(null); // null, 'employee', 'manager', or 'hr'
   const [employeeData, setEmployeeData] = useState(employees);
   const [jobData, setJobData] = useState(jobRoles);
   const [matches, setMatches] = useState([]); // Store mutual matches as { employeeId, jobId }
@@ -91,7 +92,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center gap-3">
+            <button
+              onClick={handleGoHome}
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            >
               <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center">
                 <Heart className="w-6 h-6 text-white" />
               </div>
@@ -99,7 +103,7 @@ function App() {
                 <h1 className="text-xl font-bold gradient-text">CareerSwipe</h1>
                 <p className="text-xs text-gray-500">Swipe Right on Your Future</p>
               </div>
-            </div>
+            </button>
 
             {/* Match Counter */}
             <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-100 to-rose-100 rounded-full">
@@ -144,6 +148,18 @@ function App() {
                   <Briefcase className="w-4 h-4" />
                   <span className="hidden sm:inline">Manager</span>
                 </motion.button>
+                <motion.button
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setViewMode('hr')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
+                    viewMode === 'hr'
+                      ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-100'
+                  }`}
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span className="hidden sm:inline">HR</span>
+                </motion.button>
               </div>
             </div>
           </div>
@@ -166,12 +182,18 @@ function App() {
               jobs={jobData}
               onSwipe={handleEmployeeSwipe}
             />
-          ) : (
+          ) : viewMode === 'manager' ? (
             <ManagerView
               employees={employeeData}
               jobs={jobData}
               onSwipe={handleManagerSwipe}
               isMutualMatch={isMutualMatch}
+            />
+          ) : (
+            <HRView
+              matches={matches}
+              employees={employeeData}
+              jobs={jobData}
             />
           )}
         </motion.div>

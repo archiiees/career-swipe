@@ -9,7 +9,7 @@ const LandingPage = ({ onSelectMode }) => {
     <div className="min-h-screen">
       {/* Microcopy tag */}
       <div className="fixed top-6 right-6 z-50 text-xs text-gray-400 italic max-w-xs text-right">
-        Proudly offending outdated HR systems since 2025. 😏
+        Reimagining internal mobility since 2025. ✨
       </div>
 
       {/* Hero Section */}
@@ -72,7 +72,7 @@ const LandingPage = ({ onSelectMode }) => {
         </div>
       </section>
 
-      {/* Section 2: The Villain */}
+      {/* Section 2: The Challenge */}
       <section className="py-24 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -82,26 +82,26 @@ const LandingPage = ({ onSelectMode }) => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold mb-4">
-              Traditional internal mobility is… <span className="text-red-400">binary</span>.<br />
-              <span className="text-gray-400 text-3xl">(And a little pathetic.)</span>
+              Traditional internal mobility is <span className="text-amber-400">binary</span>.<br />
+              <span className="text-gray-400 text-3xl">Let's make it more dynamic.</span>
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "0 applicants?",
-                subtitle: '"Guess we go external and spend $30,000." 🙃',
+                title: "Limited visibility",
+                subtitle: "Great internal talent often goes unnoticed",
                 delay: 0.2
               },
               {
-                title: "Employees quietly suffering?",
-                subtitle: '"But they didn\'t click apply, so… invisible!"',
+                title: "Silent opportunity gaps",
+                subtitle: "Employees don't always know what's available",
                 delay: 0.4
               },
               {
-                title: 'Managers saying: "I didn\'t even know this person existed."',
-                subtitle: "Thank you, Sherlock.",
+                title: "Disconnected teams",
+                subtitle: "Managers may not be aware of hidden talent",
                 delay: 0.6
               }
             ].map((panel, idx) => (
@@ -114,7 +114,7 @@ const LandingPage = ({ onSelectMode }) => {
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
               >
                 <h3 className="text-2xl font-bold mb-4">{panel.title}</h3>
-                <p className="text-gray-300 text-lg italic">{panel.subtitle}</p>
+                <p className="text-gray-300 text-lg">{panel.subtitle}</p>
               </motion.div>
             ))}
           </div>
@@ -127,10 +127,10 @@ const LandingPage = ({ onSelectMode }) => {
             className="text-center mt-16"
           >
             <p className="text-2xl text-gray-300 mb-2">
-              0/1 talent logic is the reason potential gets lost.
+              Binary talent decisions can limit organizational potential.
             </p>
             <p className="text-xl text-gray-400">
-              A system built on silence and hope. 🥂
+              There's a better way to connect talent with opportunity.
             </p>
           </motion.div>
         </div>
@@ -399,7 +399,7 @@ const LandingPage = ({ onSelectMode }) => {
               { stat: "40-60%", label: "internal fill potential unlocked" },
               { stat: "35%", label: "lower attrition" },
               { stat: "50%", label: "faster opportunity discovery" },
-              { stat: "0%", label: 'needy "Please consider me" emails' }
+              { stat: "2x", label: "more internal placements" }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -424,7 +424,7 @@ const LandingPage = ({ onSelectMode }) => {
 
           <div className="space-y-8">
             {[
-              { step: "1", title: "Import roles & people", subtitle: "(we'll talk to your HRIS — even the cranky ones)" },
+              { step: "1", title: "Import roles & people", subtitle: "Seamlessly integrate with your existing HRIS" },
               { step: "2", title: "Configure match signals & movement policies", subtitle: "" },
               { step: "3", title: "Watch matches appear. Constantly.", subtitle: "" }
             ].map((item, idx) => (
@@ -469,7 +469,7 @@ const LandingPage = ({ onSelectMode }) => {
               We believe your best candidate already works here.
             </p>
             <p className="text-xl text-gray-300 pt-4">
-              And we're tired of waiting for the system to notice.
+              Let's build systems that help them shine.
             </p>
             <div className="pt-12">
               <p className="text-lg text-pink-300 font-semibold">
@@ -489,8 +489,8 @@ const LandingPage = ({ onSelectMode }) => {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
-              Ready to end "apply-or-die" culture?<br />
-              <span className="gradient-text">Let's make your organization quantum-aware.</span>
+              Ready to unlock hidden potential?<br />
+              <span className="gradient-text">Let's make your organization more dynamic.</span>
             </h2>
 
             <button

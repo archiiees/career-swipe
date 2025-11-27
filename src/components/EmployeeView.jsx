@@ -144,7 +144,7 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
       </div>
 
       {/* Job Card Stack Container */}
-      <div className="relative w-full max-w-md h-[600px] flex items-center justify-center mb-8">
+      <div className="relative w-full max-w-md h-[520px] flex items-center justify-center mb-6">
         <AnimatePresence>
           {currentJob && matchData && (
             <JobCard
@@ -159,7 +159,7 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 pb-6">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
