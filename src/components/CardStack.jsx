@@ -28,7 +28,7 @@ const CardStack = ({ candidate, onSwipe, onViewProject }) => {
     >
       <div className="glass rounded-3xl overflow-hidden shadow-2xl">
         {/* Header with Match Badge */}
-        <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-8 text-white relative overflow-hidden">
+        <div className="bg-gradient-to-br from-lodha-gold to-lodha-gold-light p-8 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
 
@@ -36,8 +36,8 @@ const CardStack = ({ candidate, onSwipe, onViewProject }) => {
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h2 className="text-3xl font-bold mb-1">{candidate.name}</h2>
-                <p className="text-pink-100 text-sm">{candidate.current_role}</p>
-                <p className="text-pink-200 text-xs mt-1">{candidate.department} • {candidate.tenure}</p>
+                <p className="text-amber-100 text-sm">{candidate.current_role}</p>
+                <p className="text-amber-200 text-xs mt-1">{candidate.department} • {candidate.tenure}</p>
               </div>
               <MatchBadge score={candidate.quantum_analysis.match_score} />
             </div>
@@ -60,16 +60,16 @@ const CardStack = ({ candidate, onSwipe, onViewProject }) => {
           {/* Aspirations */}
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="w-5 h-5 text-pink-500" />
+              <Sparkles className="w-5 h-5 text-lodha-gold" />
               <h3 className="font-semibold text-gray-900">Career Aspirations</h3>
             </div>
             <p className="text-gray-600 text-sm italic">"{candidate.aspirations}"</p>
           </div>
 
           {/* AI Reasoning */}
-          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-4">
-            <h3 className="text-sm font-semibold text-pink-900 mb-2 uppercase tracking-wide flex items-center gap-2">
-              <span className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></span>
+          <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-4 border border-lodha-gold/10">
+            <h3 className="text-sm font-semibold text-lodha-dark mb-2 uppercase tracking-wide flex items-center gap-2">
+              <span className="w-2 h-2 bg-lodha-gold rounded-full animate-pulse"></span>
               AI Analysis
             </h3>
             <p className="text-gray-800 text-sm leading-relaxed">
@@ -93,7 +93,7 @@ const CardStack = ({ candidate, onSwipe, onViewProject }) => {
               e.stopPropagation();
               onViewProject();
             }}
-            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all"
+            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-lodha-navy to-lodha-dark text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all"
           >
             <Briefcase className="w-5 h-5" />
             View Micro-Project

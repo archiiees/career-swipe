@@ -28,7 +28,7 @@ const JobCard = ({ job, matchData, onSwipe, onViewProject }) => {
     >
       <div className="glass rounded-3xl overflow-hidden shadow-2xl max-h-[500px] flex flex-col">
         {/* Header with Match Badge */}
-        <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-6 text-white relative overflow-hidden flex-shrink-0">
+        <div className="bg-gradient-to-br from-lodha-dark to-lodha-navy p-6 text-white relative overflow-hidden flex-shrink-0">
           <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
 
@@ -36,7 +36,7 @@ const JobCard = ({ job, matchData, onSwipe, onViewProject }) => {
             <div className="flex items-start justify-between mb-3">
               <div className="flex-1">
                 <h2 className="text-2xl font-bold mb-2">{job.title}</h2>
-                <div className="flex flex-col gap-1 text-pink-100 text-xs">
+                <div className="flex flex-col gap-1 text-lodha-cream text-xs">
                   <div className="flex items-center gap-2">
                     <MapPin className="w-3 h-3" />
                     <span>{job.location}</span>
@@ -67,9 +67,9 @@ const JobCard = ({ job, matchData, onSwipe, onViewProject }) => {
           </div>
 
           {/* AI Reasoning */}
-          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-lg p-3">
-            <h3 className="text-xs font-semibold text-pink-900 mb-1 uppercase tracking-wide flex items-center gap-2">
-              <span className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></span>
+          <div className="bg-gradient-to-br from-lodha-cream to-white rounded-lg p-3">
+            <h3 className="text-xs font-semibold text-lodha-dark mb-1 uppercase tracking-wide flex items-center gap-2">
+              <span className="w-2 h-2 bg-lodha-gold/100 rounded-full animate-pulse"></span>
               Why This Match
             </h3>
             <p className="text-gray-800 text-xs leading-relaxed">
@@ -94,7 +94,7 @@ const JobCard = ({ job, matchData, onSwipe, onViewProject }) => {
               e.stopPropagation();
               onViewProject();
             }}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-sm"
+            className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-lodha-navy to-lodha-gold text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-sm"
           >
             <Briefcase className="w-4 h-4" />
             View Trial Project

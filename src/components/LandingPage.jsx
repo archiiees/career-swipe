@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Users, Briefcase, Sparkles, ArrowRight, Search, Brain, Target, MessageSquare, TrendingUp, Shield } from 'lucide-react';
+import { Icon } from '@iconify/react';
 import { useState, useEffect } from 'react';
 
 const LandingPage = ({ onSelectMode }) => {
@@ -19,7 +19,7 @@ const LandingPage = ({ onSelectMode }) => {
           {[...Array(particleCount)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full opacity-60"
+              className="absolute w-2 h-2 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-full opacity-50"
               animate={{
                 x: [Math.random() * window.innerWidth, Math.random() * window.innerWidth],
                 y: [Math.random() * window.innerHeight, Math.random() * window.innerHeight],
@@ -40,34 +40,29 @@ const LandingPage = ({ onSelectMode }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 mb-8 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl shadow-2xl">
-              <Heart className="w-10 h-10 text-white" />
+            <div className="inline-flex items-center justify-center w-20 h-20 mb-8 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-2xl shadow-2xl">
+              <Icon icon="solar:heart-angle-broken" className="w-10 h-10 text-white" />
             </div>
 
             <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Internal mobility is not a job board.<br />
-              <span className="gradient-text">It's a marketplace of hidden potential.</span>
+              Internal mobility isn't a job board.<br />
+              <span className="gradient-text">It's where hidden talent gets discovered.</span>
             </h1>
 
             <p className="text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
               Where employees don't need to "apply."<br />
-              They simply get <span className="font-semibold text-pink-600">discovered</span>.
+              They simply get <span className="font-semibold text-lodha-gold">discovered</span>.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button
-                onClick={() => onSelectMode('employee')}
-                className="px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
-              >
-                Start Matching Talent
-              </button>
-              <button
-                className="px-8 py-4 glass text-gray-900 text-lg font-semibold rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
-              >
-                Watch the Universe Collapse
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </div>
+            <motion.button
+              onClick={() => onSelectMode('employee')}
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-8 py-4 bg-lodha-gold text-white text-lg font-serif font-bold rounded-sm shadow-xl hover:bg-lodha-dark transition-colors relative overflow-hidden group"
+            >
+              <span className="relative z-10">Start Matching Talent</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-lodha-gold-light to-lodha-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -171,7 +166,7 @@ const LandingPage = ({ onSelectMode }) => {
                   repeat: Infinity,
                   ease: "linear"
                 }}
-                className="w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full opacity-30 absolute"
+                className="w-32 h-32 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-full opacity-20 absolute"
               />
               {[...Array(6)].map((_, i) => (
                 <motion.div
@@ -191,8 +186,8 @@ const LandingPage = ({ onSelectMode }) => {
                     top: `${50 + 30 * Math.sin((i * 60 * Math.PI) / 180)}%`,
                   }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg shadow-lg flex items-center justify-center">
-                    <Users className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-lg shadow-lg flex items-center justify-center">
+                    <Icon icon="solar:users-group-two-rounded-broken" className="w-6 h-6 text-white" />
                   </div>
                 </motion.div>
               ))}
@@ -223,22 +218,22 @@ const LandingPage = ({ onSelectMode }) => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Search,
+                icon: "solar:document-text-broken",
                 title: "We read every role's real expectations",
                 subtitle: "not just the bullet points.",
-                color: "from-blue-500 to-cyan-500"
+                color: "from-lodha-dark to-lodha-navy"
               },
               {
-                icon: Brain,
+                icon: "solar:programming-broken",
                 title: "We understand what employees can become",
                 subtitle: "not only what they've done.",
-                color: "from-purple-500 to-pink-500"
+                color: "from-lodha-navy to-lodha-gold"
               },
               {
-                icon: Target,
+                icon: "solar:target-outline",
                 title: "We suggest matches constantly",
                 subtitle: "even if no one has applied.",
-                color: "from-orange-500 to-red-500"
+                color: "from-lodha-gold to-lodha-gold-light"
               }
             ].map((item, idx) => (
               <motion.div
@@ -247,10 +242,11 @@ const LandingPage = ({ onSelectMode }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="glass rounded-2xl p-8 hover:shadow-2xl transition-all"
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                className="glass rounded-2xl p-8 hover:shadow-2xl transition-all group cursor-pointer"
               >
-                <div className={`w-16 h-16 mb-6 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center`}>
-                  <item.icon className="w-8 h-8 text-white" />
+                <div className={`w-16 h-16 mb-6 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <Icon icon={item.icon} className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.subtitle}</p>
@@ -272,7 +268,7 @@ const LandingPage = ({ onSelectMode }) => {
       </section>
 
       {/* Section 5: The Swipe Moment */}
-      <section className="py-24 px-4 bg-gradient-to-br from-pink-50 to-rose-50">
+      <section className="py-24 px-4 bg-gradient-to-br from-lodha-cream to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -281,16 +277,16 @@ const LandingPage = ({ onSelectMode }) => {
           >
             <h2 className="text-5xl font-bold text-gray-900 mb-4">
               Swipe on internal talent.<br />
-              <span className="text-pink-600">Yes, we went there.</span>
+              <span className="text-lodha-gold">Yes, we went there.</span>
             </h2>
 
             <div className="my-16 max-w-md mx-auto">
               <div className="glass rounded-3xl overflow-hidden shadow-2xl">
-                <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-6 text-white">
+                <div className="bg-gradient-to-br from-lodha-dark to-lodha-navy p-6 text-white">
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="text-2xl font-bold">Priya Sharma</h3>
-                      <p className="text-pink-100 text-sm">HR Specialist - Comp & Benefits</p>
+                      <p className="text-lodha-cream text-sm">HR Specialist - Comp & Benefits</p>
                     </div>
                     <div className="px-3 py-1 bg-green-500 rounded-full text-white font-bold text-sm">
                       82% Match
@@ -316,7 +312,7 @@ const LandingPage = ({ onSelectMode }) => {
                     <button className="flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold">
                       Not today
                     </button>
-                    <button className="flex-1 px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-lg font-semibold animate-pulse">
+                    <button className="flex-1 px-4 py-2 bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white rounded-lg font-semibold animate-pulse">
                       Let's talk
                     </button>
                   </div>
@@ -325,7 +321,7 @@ const LandingPage = ({ onSelectMode }) => {
             </div>
 
             <p className="text-xl text-gray-600 italic">
-              No cover letters. No awkward referral politics. Just chemistry.
+              No cover letters. No networking required. Just talent and opportunity.
             </p>
           </motion.div>
         </div>
@@ -369,7 +365,7 @@ const LandingPage = ({ onSelectMode }) => {
                 transition={{ delay: idx * 0.2 }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
               >
-                <h3 className="text-2xl font-bold mb-6 text-pink-400">{col.title}</h3>
+                <h3 className="text-2xl font-bold mb-6 text-lodha-gold-light">{col.title}</h3>
                 <ul className="space-y-3">
                   {col.points.map((point, i) => (
                     <li key={i} className="text-gray-300">{point}</li>
@@ -380,7 +376,7 @@ const LandingPage = ({ onSelectMode }) => {
           </div>
 
           <p className="text-center text-2xl text-gray-300">
-            Everyone wins. <span className="text-pink-400 font-semibold">Except the external recruiters.</span><br />
+            Everyone wins. <span className="text-lodha-gold-light font-semibold">Except the external recruiters.</span><br />
             <span className="text-gray-400">We're fine with that.</span>
           </p>
         </div>
@@ -424,9 +420,9 @@ const LandingPage = ({ onSelectMode }) => {
 
           <div className="space-y-8">
             {[
-              { step: "1", title: "Import roles & people", subtitle: "Seamlessly integrate with your existing HRIS" },
-              { step: "2", title: "Configure match signals & movement policies", subtitle: "" },
-              { step: "3", title: "Watch matches appear. Constantly.", subtitle: "" }
+              { step: "01", title: "Import roles & people", subtitle: "Seamlessly integrate with your existing HRIS" },
+              { step: "02", title: "Configure match signals & movement policies", subtitle: "" },
+              { step: "03", title: "Watch matches appear. Constantly.", subtitle: "" }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -434,10 +430,13 @@ const LandingPage = ({ onSelectMode }) => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="flex items-start gap-6"
+                className="flex items-start gap-6 group"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-                  {item.step}
+                <div className="relative">
+                  <div className="w-16 h-16 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-2xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all">
+                    {item.step}
+                  </div>
+                  <div className="absolute -inset-1 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-2xl opacity-0 group-hover:opacity-20 blur transition-opacity"></div>
                 </div>
                 <div className="flex-1 pt-3">
                   <h3 className="text-2xl font-bold text-gray-900 mb-1">{item.title}</h3>
@@ -454,7 +453,7 @@ const LandingPage = ({ onSelectMode }) => {
       </section>
 
       {/* Section 9: The Manifesto */}
-      <section className="py-32 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white">
+      <section className="py-32 px-4 bg-gradient-to-br from-lodha-navy via-lodha-dark to-lodha-gold text-white">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -465,14 +464,14 @@ const LandingPage = ({ onSelectMode }) => {
             <p>We believe talent shouldn't be invisible.</p>
             <p>We believe careers shouldn't depend on one click.</p>
             <p>We believe every employee deserves a fair shot.</p>
-            <p className="text-3xl font-bold text-pink-300 pt-6">
+            <p className="text-3xl font-bold text-lodha-gold-light pt-6">
               We believe your best candidate already works here.
             </p>
             <p className="text-xl text-gray-300 pt-4">
               Let's build systems that help them shine.
             </p>
             <div className="pt-12">
-              <p className="text-lg text-pink-300 font-semibold">
+              <p className="text-lg text-lodha-gold-light font-semibold">
                 — The Future of Internal Mobility
               </p>
             </div>
@@ -493,12 +492,25 @@ const LandingPage = ({ onSelectMode }) => {
               <span className="gradient-text">Let's make your organization more dynamic.</span>
             </h2>
 
-            <button
+            <motion.button
               onClick={() => onSelectMode('manager')}
-              className="px-12 py-5 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 text-white text-xl font-bold rounded-xl shadow-2xl hover:shadow-pink-500/50 hover:scale-105 transition-all"
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-12 py-5 bg-gradient-to-r from-lodha-gold via-lodha-gold-light to-lodha-dark text-white text-xl font-bold rounded-xl shadow-2xl hover:shadow-lodha-gold/50 transition-all relative overflow-hidden group"
             >
-              Unlock Hidden Talent
-            </button>
+              <span className="relative z-10">Unlock Hidden Talent</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-lodha-dark via-lodha-gold to-lodha-gold-light opacity-0 group-hover:opacity-100 transition-opacity"
+                animate={{
+                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+            </motion.button>
 
             <p className="text-gray-600 mt-8 text-lg">
               Welcome to the <span className="font-semibold gradient-text">Internal Talent Renaissance</span>.
@@ -510,7 +522,7 @@ const LandingPage = ({ onSelectMode }) => {
       {/* Footer Easter Egg */}
       <footer className="py-8 px-4 bg-gray-50 border-t border-gray-200">
         <p className="text-center text-sm text-gray-500 italic">
-          If you reached the bottom, you're already more proactive than your current internal mobility system.
+          Made it to the bottom? You're already ahead of most HR systems.
         </p>
       </footer>
     </div>

@@ -22,7 +22,7 @@ const ProjectModal = ({ isOpen, onClose, project, candidateName }) => {
             <div className="glass rounded-2xl p-8 m-4">
               <div className="flex justify-between items-start mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-lodha-gold to-lodha-gold-light flex items-center justify-center">
                     <Briefcase className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -40,8 +40,8 @@ const ProjectModal = ({ isOpen, onClose, project, candidateName }) => {
                 </button>
               </div>
 
-              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6">
-                <h3 className="text-sm font-semibold text-pink-900 mb-2 uppercase tracking-wide">
+              <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-6 border border-lodha-gold/10">
+                <h3 className="text-sm font-semibold text-lodha-dark mb-2 uppercase tracking-wide">
                   Your Challenge
                 </h3>
                 <p className="text-gray-800 text-lg leading-relaxed">
@@ -52,7 +52,7 @@ const ProjectModal = ({ isOpen, onClose, project, candidateName }) => {
               <div className="mt-6 flex gap-3">
                 <button
                   onClick={onClose}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all"
                 >
                   Accept Challenge
                 </button>

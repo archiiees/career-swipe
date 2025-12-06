@@ -22,7 +22,7 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#EC4899', '#F43F5E', '#FB923C']
+        colors: ['#9E801B', '#D4C485', '#F59E0B']
       });
     }
 
@@ -60,7 +60,7 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
           animate={{ scale: 1 }}
           className="text-center"
         >
-          <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center">
+          <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-full flex items-center justify-center">
             <Heart className="w-12 h-12 text-white" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-2">All Caught Up!</h2>
@@ -70,7 +70,7 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
               setCurrentJobIndex(0);
               setSwipeHistory([]);
             }}
-            className="mt-6 px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
+            className="mt-6 px-6 py-3 bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white rounded-xl font-semibold hover:shadow-lg transition-all"
           >
             Review Again
           </button>
@@ -89,7 +89,7 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
             className="w-full glass rounded-xl px-4 py-3 flex items-center justify-between hover:shadow-lg transition-shadow"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-white font-bold">
+              <div className="w-10 h-10 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-full flex items-center justify-center text-white font-bold">
                 {selectedEmployee?.name.charAt(0)}
               </div>
               <div className="text-left">
@@ -113,11 +113,11 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
                   <button
                     key={emp.id}
                     onClick={() => handleEmployeeChange(emp)}
-                    className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-pink-50 transition-colors ${
-                      emp.id === selectedEmployee?.id ? 'bg-pink-50' : ''
+                    className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-lodha-gold/5 transition-colors ${
+                      emp.id === selectedEmployee?.id ? 'bg-lodha-gold/5' : ''
                     }`}
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-full flex items-center justify-center text-white font-bold">
                       {emp.name.charAt(0)}
                     </div>
                     <div className="text-left">
@@ -136,8 +136,8 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold gradient-text mb-2">Opportunity Radar</h1>
         <p className="text-gray-600">Swipe right to express interest • Swipe left to pass</p>
-        <div className="mt-4 px-4 py-2 bg-gradient-to-r from-pink-100 to-rose-100 rounded-full inline-block">
-          <p className="text-sm font-semibold text-pink-900">
+        <div className="mt-4 px-4 py-2 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-full inline-block border border-lodha-gold/20">
+          <p className="text-sm font-semibold text-lodha-dark">
             {jobs.length - currentJobIndex} {jobs.length - currentJobIndex === 1 ? 'role' : 'roles'} remaining
           </p>
         </div>
@@ -183,7 +183,7 @@ const EmployeeView = ({ employees, jobs, onSwipe }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => handleSwipe('right')}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+          className="w-16 h-16 rounded-full bg-gradient-to-r from-lodha-gold to-lodha-gold-light flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
         >
           <Heart className="w-8 h-8 text-white" />
         </motion.button>

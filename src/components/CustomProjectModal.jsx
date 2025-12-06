@@ -33,7 +33,7 @@ const CustomProjectModal = ({ isOpen, onClose, onSubmit, candidateName }) => {
             <div className="glass rounded-2xl p-8 m-4">
               <div className="flex justify-between items-start mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-lodha-gold to-lodha-gold-light flex items-center justify-center">
                     <Briefcase className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -57,7 +57,7 @@ const CustomProjectModal = ({ isOpen, onClose, onSubmit, candidateName }) => {
                   value={projectDescription}
                   onChange={(e) => setProjectDescription(e.target.value)}
                   placeholder="e.g., Design a 90-day onboarding plan for new HR team members..."
-                  className="w-full h-32 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-pink-500 focus:outline-none resize-none"
+                  className="w-full h-32 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-lodha-gold focus:outline-none resize-none"
                   autoFocus
                 />
                 <p className="mt-2 text-xs text-gray-500">
@@ -69,7 +69,7 @@ const CustomProjectModal = ({ isOpen, onClose, onSubmit, candidateName }) => {
                 <button
                   onClick={handleSubmit}
                   disabled={!projectDescription.trim()}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   <Send className="w-5 h-5" />
                   Send Project

@@ -16,7 +16,7 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
       particleCount: 50,
       spread: 60,
       origin: { y: 0.7 },
-      colors: ['#EC4899', '#F43F5E', '#FB923C']
+      colors: ['#9E801B', '#D4C485', '#F59E0B']
     });
     onSwipe(candidate.id, selectedJob.id, 'right');
   };
@@ -52,7 +52,7 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#EC4899', '#F43F5E', '#FB923C']
+      colors: ['#9E801B', '#D4C485', '#F59E0B']
     });
     alert(`Project sent to ${selectedCandidate.name}!\n\n"${projectDescription}"`);
   };
@@ -71,7 +71,7 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
     } else if (managerSwiped && !employeeSwiped) {
       return { status: 'waiting', label: 'Waiting for them...', color: 'from-yellow-500 to-orange-500' };
     } else if (!managerSwiped && employeeSwiped) {
-      return { status: 'interested', label: 'They swiped right!', color: 'from-pink-500 to-rose-500' };
+      return { status: 'interested', label: 'They swiped right!', color: 'from-lodha-gold to-lodha-gold-light' };
     }
     return { status: 'none', label: '', color: '' };
   };
@@ -96,7 +96,7 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
             className="w-full glass rounded-xl px-6 py-4 flex items-center justify-between hover:shadow-lg transition-shadow"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-lodha-navy to-lodha-gold rounded-xl flex items-center justify-center">
                 <Briefcase className="w-6 h-6 text-white" />
               </div>
               <div className="text-left">
@@ -129,11 +129,11 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
                   <button
                     key={job.id}
                     onClick={() => handleJobChange(job)}
-                    className={`w-full px-6 py-4 flex items-center gap-4 hover:bg-pink-50 transition-colors ${
-                      job.id === selectedJob?.id ? 'bg-pink-50' : ''
+                    className={`w-full px-6 py-4 flex items-center gap-4 hover:bg-lodha-gold/10 transition-colors ${
+                      job.id === selectedJob?.id ? 'bg-lodha-gold/10' : ''
                     }`}
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-lodha-navy to-lodha-gold rounded-xl flex items-center justify-center">
                       <Briefcase className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-left flex-1">
@@ -161,10 +161,10 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
 
         {/* Job Info Card */}
         <div className="glass rounded-2xl p-6">
-          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-4 mb-4">
-            <h3 className="text-sm font-semibold text-pink-900 mb-2">About the Role</h3>
+          <div className="bg-gradient-to-br from-lodha-cream to-white rounded-xl p-4 mb-4">
+            <h3 className="text-sm font-semibold text-lodha-dark mb-2">About the Role</h3>
             <p className="text-gray-700 text-sm mb-3">{selectedJob.description}</p>
-            <h3 className="text-sm font-semibold text-pink-900 mb-2">Requirements</h3>
+            <h3 className="text-sm font-semibold text-lodha-dark mb-2">Requirements</h3>
             <p className="text-gray-700 text-sm italic">"{selectedJob.requirements}"</p>
           </div>
         </div>
@@ -198,15 +198,15 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
                   className="glass rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow"
                 >
                   {/* Card Header */}
-                  <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-6 text-white relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-lodha-dark to-lodha-navy p-6 text-white relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
 
                     <div className="relative z-10">
                       <div className="flex items-start justify-between mb-3">
                         <div>
                           <h3 className="text-xl font-bold mb-1">{candidate.name}</h3>
-                          <p className="text-pink-100 text-sm">{candidate.current_role}</p>
-                          <p className="text-pink-200 text-xs mt-1">
+                          <p className="text-lodha-cream text-sm">{candidate.current_role}</p>
+                          <p className="text-lodha-gold-light text-xs mt-1">
                             {candidate.department} • {candidate.tenure}
                           </p>
                         </div>
@@ -259,9 +259,9 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
                     </div>
 
                     {/* Aspirations */}
-                    <div className="bg-purple-50 rounded-lg p-3">
-                      <h4 className="text-xs font-semibold text-purple-900 mb-1">Career Goals</h4>
-                      <p className="text-sm text-purple-800 italic">
+                    <div className="bg-lodha-cream rounded-lg p-3">
+                      <h4 className="text-xs font-semibold text-lodha-dark mb-1">Career Goals</h4>
+                      <p className="text-sm text-lodha-dark italic">
                         "{candidate.aspirations}"
                       </p>
                     </div>
@@ -277,7 +277,7 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
                         </button>
                         <button
                           onClick={() => handleSwipeRight(candidate)}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all"
                         >
                           <Heart className="w-4 h-4" />
                           Interested
@@ -293,7 +293,7 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
                           disabled={!isMatched}
                           className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
                             isMatched
-                              ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:shadow-lg hover:scale-105'
+                              ? 'bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white hover:shadow-lg hover:scale-105'
                               : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                           }`}
                         >
@@ -306,7 +306,7 @@ const ManagerView = ({ employees, jobs, onSwipe, isMutualMatch }) => {
                           disabled={!isMatched}
                           className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
                             isMatched
-                              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:scale-105'
+                              ? 'bg-gradient-to-r from-lodha-navy to-lodha-gold text-white hover:shadow-lg hover:scale-105'
                               : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                           }`}
                         >

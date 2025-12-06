@@ -110,12 +110,12 @@ const HRView = ({ matches, employees, jobs }) => {
                 </div>
 
                 {/* Micro Project */}
-                <div className="bg-purple-50 rounded-lg p-3">
-                  <h4 className="text-xs font-semibold text-purple-900 mb-1 flex items-center gap-1">
+                <div className="bg-amber-50 rounded-lg p-3 border border-lodha-gold/20">
+                  <h4 className="text-xs font-semibold text-lodha-dark mb-1 flex items-center gap-1">
                     <FileText className="w-3 h-3" />
                     Trial Project
                   </h4>
-                  <p className="text-sm text-purple-800">
+                  <p className="text-sm text-gray-700">
                     {matchData.micro_project}
                   </p>
                 </div>
@@ -124,7 +124,7 @@ const HRView = ({ matches, employees, jobs }) => {
                 <div className="pt-2 space-y-2">
                   <button
                     onClick={() => handleScheduleMeeting(match)}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-lodha-navy to-lodha-gold text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all"
                   >
                     <Calendar className="w-4 h-4" />
                     Schedule Meeting
@@ -133,14 +133,14 @@ const HRView = ({ matches, employees, jobs }) => {
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => handleSendMessage(match)}
-                      className="flex items-center justify-center gap-1 px-3 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-sm"
+                      className="flex items-center justify-center gap-1 px-3 py-2 bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-sm"
                     >
                       <MessageSquare className="w-4 h-4" />
                       Message
                     </button>
                     <button
                       onClick={() => handleAssignProject(match)}
-                      className="flex items-center justify-center gap-1 px-3 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-sm"
+                      className="flex items-center justify-center gap-1 px-3 py-2 bg-gradient-to-r from-lodha-navy to-lodha-dark text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-sm"
                     >
                       <FileText className="w-4 h-4" />
                       Assign

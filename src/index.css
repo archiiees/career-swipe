@@ -1,17 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+  /* Custom Lodha colors for Tailwind v4 */
+  --color-lodha-gold: #9E801B;
+  --color-lodha-dark: #282828;
+  --color-lodha-navy: #1b1247;
+  --color-lodha-cream: #F5F5F0;
+  --color-lodha-gold-light: #D4C485;
+
+  /* Font families */
+  --font-family-serif: 'Cormorant Garamond', serif;
+  --font-family-sans: 'Open Sans', sans-serif;
+}
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900 font-sans antialiased;
+    background-color: var(--color-lodha-cream);
+    color: var(--color-lodha-dark);
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Apply Serif font to all headings automatically */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-xl;
+    background-color: rgb(255 255 255 / 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(158 128 27 / 0.2);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--color-lodha-gold), var(--color-lodha-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Unique craft signal - corner accent */
+  .corner-accent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    height: 5rem;
+    background-image: linear-gradient(to bottom right, rgb(158 128 27 / 0.1), transparent);
+    border-bottom-left-radius: 9999px;
+    pointer-events: none;
   }
 }

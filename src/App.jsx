@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Users, Briefcase, Heart, Home, Calendar } from 'lucide-react';
+import { Icon } from '@iconify/react';
 import LandingPage from './components/LandingPage';
 import EmployeeView from './components/EmployeeView';
 import ManagerView from './components/ManagerView';
@@ -79,14 +79,14 @@ function App() {
 
   if (!viewMode) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-orange-50">
+      <div className="min-h-screen bg-lodha-cream">
         <LandingPage onSelectMode={handleSelectMode} />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-orange-50">
+    <div className="min-h-screen bg-lodha-cream">
       {/* Header with Navigation */}
       <div className="sticky top-0 z-30 glass border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 py-4">
@@ -96,8 +96,8 @@ function App() {
               onClick={handleGoHome}
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 bg-gradient-to-br from-lodha-gold to-lodha-gold-light rounded-lg flex items-center justify-center">
+                <Icon icon="solar:heart-pulse-broken" className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h1 className="text-xl font-bold gradient-text">CareerSwipe</h1>
@@ -106,9 +106,9 @@ function App() {
             </button>
 
             {/* Match Counter */}
-            <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-100 to-rose-100 rounded-full">
-              <Heart className="w-4 h-4 text-pink-600" />
-              <span className="text-sm font-semibold text-pink-900">
+            <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-full border border-lodha-gold/20">
+              <Icon icon="solar:heart-outline" className="w-4 h-4 text-lodha-gold" />
+              <span className="text-sm font-semibold text-lodha-dark">
                 {matches.length} {matches.length === 1 ? 'Match' : 'Matches'}
               </span>
             </div>
@@ -119,7 +119,7 @@ function App() {
                 onClick={handleGoHome}
                 className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:bg-white rounded-lg transition-colors"
               >
-                <Home className="w-4 h-4" />
+                <Icon icon="solar:home-smile-broken" className="w-4 h-4" />
                 <span className="hidden sm:inline">Home</span>
               </button>
 
@@ -127,37 +127,34 @@ function App() {
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setViewMode('employee')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
-                    viewMode === 'employee'
-                      ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md'
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${viewMode === 'employee'
+                      ? 'bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white shadow-md'
                       : 'text-gray-600 hover:bg-gray-100'
-                  }`}
+                    }`}
                 >
-                  <Users className="w-4 h-4" />
+                  <Icon icon="solar:user-id-broken" className="w-4 h-4" />
                   <span className="hidden sm:inline">Employee</span>
                 </motion.button>
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setViewMode('manager')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
-                    viewMode === 'manager'
-                      ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md'
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${viewMode === 'manager'
+                      ? 'bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white shadow-md'
                       : 'text-gray-600 hover:bg-gray-100'
-                  }`}
+                    }`}
                 >
-                  <Briefcase className="w-4 h-4" />
+                  <Icon icon="solar:case-minimalistic-broken" className="w-4 h-4" />
                   <span className="hidden sm:inline">Manager</span>
                 </motion.button>
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setViewMode('hr')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
-                    viewMode === 'hr'
-                      ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md'
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${viewMode === 'hr'
+                      ? 'bg-gradient-to-r from-lodha-gold to-lodha-gold-light text-white shadow-md'
                       : 'text-gray-600 hover:bg-gray-100'
-                  }`}
+                    }`}
                 >
-                  <Calendar className="w-4 h-4" />
+                  <Icon icon="solar:graph-new-broken" className="w-4 h-4" />
                   <span className="hidden sm:inline">HR</span>
                 </motion.button>
               </div>
@@ -200,7 +197,7 @@ function App() {
       </AnimatePresence>
 
       {/* Footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-pink-500/10 to-rose-500/10 backdrop-blur-sm border-t border-white/20 py-3">
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-lodha-gold/10 to-lodha-gold-light/10 backdrop-blur-sm border-t border-white/20 py-3">
         <div className="max-w-7xl mx-auto px-4">
           <p className="text-center text-sm text-gray-600">
             <span className="font-semibold gradient-text">Double Opt-In:</span> Matches only happen when both parties swipe right
